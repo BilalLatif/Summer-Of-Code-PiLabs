@@ -1,3 +1,3 @@
 setInterval(function(){
-		cont.givemedata();
+		arr.getdata();
 	},1000);
