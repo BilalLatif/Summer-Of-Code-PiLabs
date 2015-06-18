@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="start.js"></script>
+		<script type="text/javascript" src="pulldata.js"></script>
+		<script type="text/javascript" src="savedata.js"></script>
+		<script type="text/javascript" src="newstate.js"></script>
+		<script type="text/javascript" src="show.js"></script>
+		<script type="text/javascript">
+			var arr=[];
+		</script>
+	</head>
+	<body onload="pulldata()">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="input-group">
+				<input type="text" id="sub" class="form-control"/>
+				<div class="input-group-btn">
+					<button class="btn btn-primary" id="nbtn">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<br>
+	<div class="row">
+			<ul id="todo">
+				
+			</ul>
+	</div>	
+				<button class="btn btn-primary" id="showbtn" onclick="pulldata()">Show Data</button>
+
+	</body>
+</html>
