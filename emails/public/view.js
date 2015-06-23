@@ -70,5 +70,6 @@ function viewsentonpage(arr2){
 	//$('#showme').find('#eml').text(arr2.sendfrom);
 	//$('#showme').find('#ntxt').text(arr2.msg);
 	$('#loadimgemail').remove();
-	$('#openselectedlink').append('<p class="text-left" id="'+arr2.sendfrom+'">'+arr2.sendfrom+'</p><p class="text-center">'+arr2.msg+'</p><p class="text-right">Right aligned text.</p>');
+	$('#openselectedlink').append('<h3>'+arr2.subject+'</h3><p class="text-left" id="'+arr2.sendfrom+'">'+arr2.msg+'</p>');
+	//$('#openselectedlink').append('<span class="name" style="min-width: 120px; display: inline-block;" id="eml">'+arr2.sendto+'</span><span class=""><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+arr2.subject+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span><span class="text-muted" style="font-size: 11px;" id="ntxt">'+arr2.msg+'</span><span class="badge">'+arr2.sendtime+'</span>');
 }

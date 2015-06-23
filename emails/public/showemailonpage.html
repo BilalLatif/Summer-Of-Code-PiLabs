@@ -13,9 +13,8 @@
     <script type="text/javascript" src="controller.js"></script>
     <script type="text/javascript" src="model.js"></script>
     <script type="text/javascript" src="setinterval.js"></script>
-    <div class="page-header">
-  <h1>Example page header <small>Subtext for header</small></h1>
-</div>
+    <link href="style.css" rel="stylesheet">
+  
  <script type="text/javascript">
  	function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -36,6 +35,18 @@ setTimeout(function(){
 </head>
 
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><img id="headh1" src="logo.jpg"></li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="container">
         <div class="row">
             <div class="col-sm-3 col-md-2">
@@ -51,12 +62,13 @@ setTimeout(function(){
                     <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-inbox"></span>Primary</a></li>
                 </ul>
                 <div class="tab-content">
-                	<div class="jumbotron">
+                	<div class=".container" style="height:250px;">
                     	<div class="tab-pane fade in active" id="homeforemail">
                         	<div class="list-group" id="openselectedlink" >
-                            <img src="loader.gif" id="loadimgemail" style="margin-left:450px;margin-top:200px;">
-                        </div>
+                            <img src="loader.gif" id="loadimgemail" style="margin-left:400px;margin-top:80px;">
+                            </div>
                     	</div>
+                    </div>
 
             </div>
              <div class="form-group">
