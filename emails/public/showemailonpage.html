@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Login Form</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="bootstrap-3.3.4-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.4-dist/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" src="view.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="model.js"></script>
+    <script type="text/javascript" src="setinterval.js"></script>
+    <div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div>
+ <script type="text/javascript">
+ 	function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+$(document).ready(function(){
+	var prodId = getParameterByName('prodId');
+//alert(prodId);
+setTimeout(function(){
+		cont.showemaildata(prodId);
+
+	},1000);
+});
+
+ </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="compose.html"><span class="badge pull-right"></span> Compose </a></li>
+                    <li class="active"><a href="/emails"> Inbox </a></li>
+                    <li><a href="sent.html">Sent </a></li>
+                    <li><a href="/logout"><button class="btn btn-danger"> LogOut </button></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-md-10">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab"><span class="glyphicon glyphicon-inbox"></span>Primary</a></li>
+                </ul>
+                <div class="tab-content">
+                	<div class="jumbotron">
+                    	<div class="tab-pane fade in active" id="homeforemail">
+                        	<div class="list-group" id="openselectedlink" >
+                            <img src="loader.gif" id="loadimgemail" style="margin-left:450px;margin-top:200px;">
+                        </div>
+                    	</div>
+
+            </div>
+             <div class="form-group">
+                <label class="col-sm-12" for="inputBody">Reply</label>
+                <div class="col-sm-12"><textarea class="form-control" id="replymsg" rows="10"></textarea>
+                <label class="col-sm-12" for="inputBody"></label>
+                <label class="col-sm-12" for="inputBody"></label>
+            	<button class="btn btn-primary" id="sendreply">Send</button>
+                </div>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    </div>
+            
+          		
+</body>
+</html>
