@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="container" >
+		<div class="row">
+			<div class="col-xs-3" id="row00"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+			<div class="col-xs-3" id="row01"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+			<div class="col-xs-3" id="row02"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3" id="row10"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+			<div class="col-xs-3" id="row11"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+			<div class="col-xs-3" id="row12"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3" id="row20"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+			<div class="col-xs-3" id="row21"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+			<div class="col-xs-3" id="row22"><button class="btn btn-default" onclick="tick(this)">+</button></div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var arr={"counter":0};
+	localStorage.i=JSON.stringify(arr);
+	//$('.container').css("position","absolute");
+	$(document).keydown(function(e){
+		 switch (e.which) {
+    case 37:
+        $('.container').animate({
+            right: '+=10px'
+        }); //left arrow key
+        break;
+    case 38:
+        $('.container').animate({
+            bottom: '+=10px'
+        }); //up arrow key
+        break;
+    case 39:
+        $('.container').animate({
+            left: '+=10px'
+        }); //right arrow key
+        break;
+    case 40:
+        $('.container').animate({
+            top: '+=10px'
+        }); //bottom arrow key
+        break;
+    }
+	});
+
+});
+
+	function tick(tickit){
+		var i=JSON.parse(localStorage.i);
+		if((i.counter%2)==0){
+			i.counter++;
+			tickit.innerHTML="O";
+			$(tickit).prop("disabled",true);
+					
+		}
+		else{
+			i.counter++;
+			tickit.innerHTML="X";
+			$(tickit).prop("disabled",true);
+			
+		}
+		 arr={"counter":i.counter};
+		localStorage.i=JSON.stringify(arr);
+		check();
+	}
+	function check(){
+		//$('#row00').find('button').text("S");
+		var outside=0,inside=0,ccheck=0;
+		for(outside=0;outside<3;outside++){
+			for(inside=0;inside<3;inside++){
+				if(($('#row'+outside+inside).find('button').text())!="O"){
+					ccheck++;
+				}
+			}
+			if(ccheck==0){
+				alert("O Wins");
+				window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+				//goto lab;
+			}
+			ccheck=0;	
+		}
+		for(outside=0;outside<3;outside++){
+			for(inside=0;inside<3;inside++){
+				if(($('#row'+inside+outside).find('button').text())!="O"){
+					ccheck++;
+				}
+			}
+			if(ccheck==0){
+				alert("O Wins");
+				window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+				//goto lab;
+			}
+			ccheck=0;	
+		}
+		for(outside=0;outside<3;outside++){
+			for(inside=0;inside<3;inside++){
+				if(($('#row'+outside+inside).find('button').text())!="X"){
+					ccheck++;
+				}
+			}
+			if(ccheck==0){
+				alert("x Wins");
+				window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+				//goto lab;
+			}
+			ccheck=0;	
+		}
+		for(outside=0;outside<3;outside++){
+			for(inside=0;inside<3;inside++){
+				if(($('#row'+inside+outside).find('button').text())!="X"){
+					ccheck++;
+				}
+			}
+			if(ccheck==0){
+				alert("X Wins");
+				window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+				//goto lab;
+			}
+			ccheck=0;	
+		}
+		for(outside=0;outside<3;outside++){
+			if(($('#row'+outside+outside).find('button').text())!="X"){
+					ccheck++;
+				}
+		}
+		if(($('#row00').find('button').text())=="X"&&($('#row11').find('button').text())=="X"&&($('#row22').find('button').text())=="X"){
+					alert("X wins");
+					window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+		}
+		if(($('#row00').find('button').text())=="O"&&($('#row11').find('button').text())=="O"&&($('#row22').find('button').text())=="O"){
+					alert("O wins");
+					window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+		}
+		if(($('#row02').find('button').text())=="X"&&($('#row11').find('button').text())=="X"&&($('#row20').find('button').text())=="X"){
+					alert("X wins");
+					window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+		}
+		if(($('#row02').find('button').text())=="O"&&($('#row11').find('button').text())=="O"&&($('#row20').find('button').text())=="O"){
+					alert("O wins");
+					window.location.href="file:///C:/Users/M.Bilal%20Latif/Desktop/pilabs/tic/index.html";
+		}
+		//lab:
+	}
+	</script>
+	
+</html>

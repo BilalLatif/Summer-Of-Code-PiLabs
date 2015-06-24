@@ -1,0 +1,13 @@
+.col-xs-3{border-style:solid;}
+#row00{border-left:none;border-top:none;}
+#row01{border-top:none;}
+#row02{border-right:none;border-top:none;}
+#row10{border-left:none;}
+#row12{border-right:none;}
+#row20{border-left:none;border-bottom:none;}
+#row21{border-bottom:none;}
+#row22{border-right:none;border-bottom:none;}
+button{width:100px;height:50px;}
+img{width:200px;height:150px;}
+.container-fluid{width: 100%;height: 100%;position: absolute;}
+.container{position: absolute;width: 500px; height:270px; margin-top:150px; margin-right:450px; margin-bottom:auto; margin-left:450px;text-align: center;padding-left:18px;padding-right: 0px;padding-top: 40px;}
