@@ -6,23 +6,19 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" ng-submit="submit()" ng-controller="signupController">
+                        <form role="form" ng-submit="submit()" ng-controller="loginController">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" ng-model="email" autofocus>
+                                    <input class="form-control" placeholder="Username" name="username" type="usename" ng-model="username">
                                 </div>
                                 <div class="form-group">
-                                  <input type="username" name="username" class="form-control" placeholder="Username" ng-model="username">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" ng-model="password">
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="" ng-model="password">
-                                </div>
-                                
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="submit" class="btn btn-default">Login</button>
                             </fieldset>
                         </form>
-                        <a ng-href="/app/#/login">LogIn</a>
+                        <a ng-href="/#/signup">SignUp For Free</a>
                     </div>
                 </div>
             </div>
