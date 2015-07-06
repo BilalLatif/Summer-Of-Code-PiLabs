@@ -2,7 +2,7 @@ var express = require('express')
   , passport = require('passport')
   , util = require('util')
   , LocalStrategy = require('passport-local').Strategy;
-
+var port = process.env.PORT || 3001;
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -15,9 +15,13 @@ app.use(function(req,res,next){
     req.db = db;
     next();
 });
+var dburl='localhost:27017/nodetest1';
+if(process.env.PORT){
+  dburl='angular:december181993@ds053312.mongolab.com:53312/angular';
+}
 var jsonParser = bodyParser.json();
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
+var db = monk(dburl);
 
 
 //var users = [{}];
@@ -143,7 +147,7 @@ app.use('/', express.static(__dirname + '/public/'));
 
 
 app.get('/loginfailed', ensureAuthenticated, function(req, res){
-  console.log("in login");
+  console.log("in loginfailed");
   res.send({error:true});
 });
 
@@ -216,6 +220,7 @@ app.post('/Login',
   function(req, res) {
     nameofcurrentuser=req.user.username;
     emailofcurrentuser=req.user.email;
+    console.log("logged in",req.user.username);
     res.send({success:true});
   });
   
@@ -246,7 +251,7 @@ app.get('/logout', function(req, res){
   //res.redirect('/');
 });
 
-app.listen(3030);
+app.listen(port);
 
 
 // Simple route middleware to ensure user is authenticated.
