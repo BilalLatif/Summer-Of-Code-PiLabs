@@ -7,7 +7,6 @@ angular.module('F1FeederApp', [
   $routeProvider.when("/login", {templateUrl: "partials/login.html", controller: "loginController"}).
  when("/signup", {templateUrl: "partials/signup.html", controller: "signupController"}).
   when("/list", {templateUrl: "partials/list.html", controller: "listController"}).
-  when("/logout", {templateUrl: "partials/list.html", controller: "logoutController"}).
-   when("/listtoadd", {templateUrl: "partials/listtoadd.html"}).
+   when("/listtoadd", {templateUrl: "partials/listtoadd.html", controller: "listController"}).
  otherwise({redirectTo: '/list'});
-}]);
+}]); 

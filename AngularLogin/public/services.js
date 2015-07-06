@@ -26,5 +26,11 @@ angular.module('F1FeederApp.services', []).
     ergastAPI.blogupdatefunc = function(title1,txt,usrname,d) {
      return  $http.post('/blogupdate',{title1:title1,txt:txt,username:usrname,time:d});
     }
+    ergastAPI.getuserfunc = function() {
+     return $http({
+        method: 'GET', 
+        url: '/getuser'
+      });
+    }
     return ergastAPI;
   });

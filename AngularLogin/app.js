@@ -160,6 +160,17 @@ app.get('/showlist', function(req, res){
   
 });
 
+app.get('/getuser', function(req, res){
+  if(req.isAuthenticated()){
+      res.send(req.user.username);
+  }
+  else{
+        res.send("");    
+  }
+
+  
+});
+
 //------------sigup---------------------------------------------------------------------------
 
 app.post("/Signup",jsonParser,function(req,res){
@@ -248,7 +259,7 @@ app.get('/logout', function(req, res){
   //req.session.reset();
   req.logout();
 
-  //res.redirect('/');
+  res.send({success:true});
 });
 
 app.listen(port);
