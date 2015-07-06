@@ -26,7 +26,7 @@ controller('signupController', function($scope,ergastAPIservice,$location) {
       });
     }
     ergastAPIservice.getuserfunc().success(function(res){
-      if(res==""){
+      if(res!=""){
          $location.path("/list");
       }
            
