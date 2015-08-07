@@ -10,3 +10,4 @@ angular.module('F1FeederApp', [
    when("/listtoadd", {templateUrl: "partials/listtoadd.html", controller: "listController"}).
  otherwise({redirectTo: '/list'});
 }]); 
+angular.module('app', ['flow']);

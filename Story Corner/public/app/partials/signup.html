@@ -1,0 +1,12 @@
+<div class="container">
+  <form ng-submit="PostUser()" class="form-signin">
+    <h1 class="form-signin-heading">Sign Up</h1>
+      <input type="text" ng-model="fullname" class="form-control" placeholder="Full Name" required autofocus>
+      <input type="text" ng-model="username" class="form-control" placeholder="Username" required autofocus>
+      <input type="email" ng-model="email" class="form-control" placeholder="Email address" required autofocus>
+      <input type="password" ng-model="password" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      <div ng-show="error"><i class="glyphicon glyphicon-remove-circle"></i> {{message}}</div>
+      <a href="#/SignIn" style="float:right;">Already a Member?</a>
+    </form>
+</div> <!-- /container -->

@@ -1,0 +1,10 @@
+<div class="container">
+  <form ng-submit="GetUser()" class="form-signin">
+    <h1 class="form-signin-heading">Sign In</h1>
+      <input type="text" ng-model="username" class="form-control" placeholder="Username" required autofocus>
+      <input type="password" ng-model="password" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+      <div ng-show="error"><i class="glyphicon glyphicon-remove-circle"></i> Invalid Username or Password</div>
+      <a href="#/SignUp" style="float:right;">Not a Member?</a>
+    </form>
+</div> <!-- /container -->

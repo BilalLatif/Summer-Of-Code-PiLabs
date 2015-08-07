@@ -69,4 +69,21 @@ controller('signupController', function($scope,ergastAPIservice,$location) {
       }
            
       });
+}).controller('imgcontroller', function($scope,ergastAPIservice,$location) {
+  console.log("in c");
+  $scope.uploadFile = function(element) {
+  console.log("in c in");
+  $scope.files=element.files;
+   console.log(element[0].name);
+   var file=element[0].name;
+   console.log("hjggdjh",file);
+
+}
+$scope.addFile = function() {
+  console.log($scope.files);
+   var fso  = new ActiveXObject("Scripting.FileSystemObject");
+   var fh = fso.CreateTextFile("c:\\Test.bmp", true);
+   fh.WriteLine("Some text goes here...");
+   fh.Close();
+}
 });

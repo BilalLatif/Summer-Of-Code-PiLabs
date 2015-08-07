@@ -1,0 +1,90 @@
+    <header id="HOME" style="background-position: 50% -125px;">
+        <div class="section_overlay">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="../images/logo.png" alt=""></a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><a href="" ng-click="Scroll('HOME')">Home</a></li>
+                        <li><a href="" ng-click="Scroll('HOME')">Logout</a></li>
+                      </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container -->
+            </nav> 
+        </div>  
+    </header>    
+
+    <section class="about_us_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="about_title">
+                        <h2>Profile</h2>
+                        <img src="../images/shape.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8  col-md-offset-2  wow fadeIn animated">
+                    <img class="img-responsive" src={{user.pictureUrl}} style="float:right;">
+                    <table class="table" style="text-align:center;">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{user.firstName + " " + user.lastName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Headline</td>
+                                <td>{{user.headline}}</td>
+                            </tr>
+                            <tr>
+                                <td>Skills</td>
+                                <td ng-repeat="x in user.FullProfileData.skills">{{x}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <form ng-submit="Post()" class="form-signin">
+            <div class="container" style="margin-bottom:1%;">
+                <div class="row">
+                    <div class="col-md-4  col-md-offset-4  wow fadeIn animated">
+                        <input type="text" class="form-control" placeholder="Enter your Current Salary in PKR" ng-model="CurrentSalary">
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin-bottom:1%;">
+                <div class="row">
+                    <div class="col-md-4  col-md-offset-4  wow fadeIn animated">
+                        <input type="text" class="form-control" placeholder="Enter your Desired Salary in PKR" ng-model="DesiredSalary">
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin-bottom:1%;">
+                <div class="row">
+                    <div class="col-md-4  col-md-offset-5  wow fadeIn animated">
+                        <button class="btn btn-lg btn-primary" type="submit">Submit Application</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>

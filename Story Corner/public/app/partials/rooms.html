@@ -1,0 +1,117 @@
+  <!-- Modal -->
+    <div class="modal fade container" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="modal-title" style="text-align:center;">Create a Room</h3>
+                </div>
+                <div class="modal-body">
+                    <form ng-submit="PostRoom()" method="post">
+                        <div class="form-group">
+                            <label class="col-sm-2" for="inputSubject">Title</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" ng-model="title" placeholder="Room Title" required autofocus>
+                                </div>
+                        </div>
+                        <div style="text-align:center;">
+                            <button type="submit" class="btn btn-primary" style="margin-left:3%;margin:1%;">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/" style="font-family:Chiller;font-weight:bold;font-size:290%;">Story Corner</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/Contact">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="">
+                        <i class="glyphicon glyphicon-user"></i> {{fullname}} <span class="caret"></span></a>
+                        <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                            <li><a href ng-click="Logout()"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-4" style="float:right;">
+                <!-- Blog Search Well -->
+                <div style="text-align: center; margin-bottom:20px;">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Create a Room</button>
+                </div>
+                <div class="well">
+                    <h4>Search for Rooms</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="query">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+            </div>
+                <hr style="border-width: 5px;">
+
+            <div class="col-md-8" ng-repeat="Rooms in rooms | filter:query">
+
+                <h1><a href="#/Story/{{Rooms._id}}">{{Rooms.title}}</a></h1>
+                <p class="lead">by <a href="">{{Rooms.username}}</a></p>
+                <p><span class="glyphicon glyphicon-time"></span> Created on {{Rooms.timestamp}}</p>
+                <hr>
+                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <hr style="border-width: 5px;">
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p style="text-align:center;">Copyright &copy; Pi Labs, inc. 2015</p>
+                </div>
+                <!-- /A.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>

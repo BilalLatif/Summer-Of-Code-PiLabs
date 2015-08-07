@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>RateIt</title>
+
+	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+	
+	<!-- Bootstrap itself -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/magister.css">
+
+	<!-- Fonts -->
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/googleapi.css" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome-4.4.0/css/font-awesome.min.css">
+	<style>
+    input.transparent-input{
+       background-color:transparent !important;
+       border:0px solid !important;
+    	}
+	</style>
+</head>
+
+<!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
+<body class="theme-invert" ng-app="BlogApp">
+
+<nav class="mainmenu" ng-controller="homeController">
+	<div class="container">
+		<div class="dropdown">
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a ng-href="/#/home">Home</a></li>
+				<li><a ng-href="/#/signup">Sign Up</a></li>
+				<li><a ng-href="/#/login">LogIn</a></li>
+				<li><a ng-href="/#/rateit">Rate It</a></li>
+				<li><a ng-href="/#/about">Contact and About</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+
+<div ng-view class="reveal-animation"></div>
+
+
+<!-- Load js libs only when the page is loaded. -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/modernizr.custom.72241.js"></script>
+<!-- Custom template scripts -->
+ <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js" type="text/javascript" charset="utf-8"></script>
+ <script src ="http://code.angularjs.org/1.2.0-rc.2/angular-animate.js" type="text/javascript" charset="utf-8"></script>
+ <script src ="http://code.angularjs.org/1.2.0-rc.2/angular-route.js" type="text/javascript" charset="utf-8"></script>
+<script src="app.js"></script>
+<script src="services.js"></script>
+<script src="controllers.js"></script>
+</body>
+</html>

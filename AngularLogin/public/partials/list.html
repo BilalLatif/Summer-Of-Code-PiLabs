@@ -37,6 +37,13 @@
 
     <!-- Page Content -->
     <div class="container">
+    <form ng-submit="addFile()" ng-controller="imgcontroller">
+        <input type="file" name="file" id="file" onchange="angular.element(this).scope().uploadFile(this.files)" ng-model="files"/>
+        <button type="submit">submit</button>
+    </form>
+    
+ 
+
  <!-- Blog Sidebar Widgets Column -->
             
         <div class="row"  ng-controller="listController">

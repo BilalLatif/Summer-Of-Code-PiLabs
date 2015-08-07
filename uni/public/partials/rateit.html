@@ -1,0 +1,136 @@
+
+
+	
+	
+	<div class="container">
+	<div id="container" style="height:100px;"></div>
+		<a href="#" class="btn btn-default" role="button" ng-click="logout()" style="float:right;">LogOut</a>
+		<h2 class="text-center title">Rate Now</h2>
+		<p class="lead text-center">
+			Huge thank you to all people who express their feelings here<br>
+			 thank you guys!
+			<div class="mypills" style="margin-left:35%;">
+			<ul class="nav nav-pills">
+	            <li ng-class="{active:isSet(1)}"><a href ng-click="setTab(1)">CS</a></li>
+	            <li ng-class="{active:isSet(2)}"><a href ng-click="setTab(2)">EE</a></li>
+	            <li ng-class="{active:isSet(3)}"><a href ng-click="setTab(3)">BBA</a></li>
+	            <li ng-class="{active:isSet(4)}"><a href ng-click="setTab(4)">Sciences & Humanities</a></li>
+	        </ul>
+        	</div>
+		</p>
+		<div class="row" ng-show="isSet(1)">
+		<div ng-repeat="imgs in images">
+			<div class="col-sm-4 col-sm-offset-2" ng-if="$index%2==0">
+			
+				<div class="thumbnail" style="height:400px;">
+					<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+					<div class="caption">
+						<h3>{{imgs.tusername}}</h3>
+						<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4" ng-if="$index%2!=0">
+						
+						<div class="thumbnail" style="height:400px;">
+							<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+							<div class="caption">
+								<h3>{{imgs.tusername}}</h3>
+								<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+							</div>
+						</div>
+			</div>
+					
+		</div>
+		</div>
+
+
+	<div class="row" ng-show="isSet(2)">
+		<div ng-repeat="imgs in images">
+			<div class="col-sm-4 col-sm-offset-2" ng-if="$index%2==0">
+			
+				<div class="thumbnail" style="height:400px;">
+					<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+					<div class="caption">
+						<h3>{{imgs.tusername}}</h3>
+						<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4" ng-if="$index%2!=0">
+						
+						<div class="thumbnail" style="height:400px;">
+							<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+							<div class="caption">
+								<h3>{{imgs.tusername}}</h3>
+								<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+							</div>
+						</div>
+			</div>
+					
+		</div>
+		</div>
+
+
+
+	<div class="row" ng-show="isSet(3)">
+		<div ng-repeat="imgs in images">
+			<div class="col-sm-4 col-sm-offset-2" ng-if="$index%2==0">
+			
+				<div class="thumbnail" style="height:400px;">
+					<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+					<div class="caption">
+						<h3>{{imgs.tusername}}</h3>
+						<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4" ng-if="$index%2!=0">
+						
+						<div class="thumbnail" style="height:400px;">
+							<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+							<div class="caption">
+								<h3>{{imgs.tusername}}</h3>
+								<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+							</div>
+						</div>
+			</div>
+					
+		</div>
+		</div>
+
+
+
+
+	<div class="row" ng-show="isSet(4)">
+		<div ng-repeat="imgs in images">
+			<div class="col-sm-4 col-sm-offset-2" ng-if="$index%2==0">
+			
+				<div class="thumbnail" style="height:400px;">
+					<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+					<div class="caption">
+						<h3>{{imgs.tusername}}</h3>
+						<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4" ng-if="$index%2!=0">
+						
+						<div class="thumbnail" style="height:400px;">
+							<img src="{{imgs.timage}}" alt="" style="height:250px;width:250px;">
+							<div class="caption">
+								<h3>{{imgs.tusername}}</h3>
+								<p><a href="" ng-click="like(imgs._id)"><i class="fa fa-thumbs-o-up fa-2x"></i></a>{{imgs.tlikes}}<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><a href="" ng-click="unlike(imgs._id)"><i class="fa fa-thumbs-o-down fa-2x"></i></a>{{imgs.tdislikes}}</p>
+							</div>
+						</div>
+			</div>
+					
+		</div>
+		</div>
+
+
+	</div>
